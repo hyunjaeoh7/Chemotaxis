@@ -5,7 +5,7 @@ Enemy [] joe;
 void setup(){
   //declares bob & joe
   //sets up some other stuff like the size, text stuff, and frame rate
-  size(500,500);
+  size(1000,1000);
   textAlign(0);
   textSize(47);
   frameRate(60);
