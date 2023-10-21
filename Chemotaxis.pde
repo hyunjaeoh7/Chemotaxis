@@ -69,7 +69,7 @@ class Enemy{//other cells
         fill(0,0,0);//otherwise you lose
         text("You Lost!", 150, 150);
         textSize(23);
-        text("Your score: " + bob.r, 160, 175);
+        text("Your score: " + (int)bob.r, 160, 175);
         exit();
       }
     }
