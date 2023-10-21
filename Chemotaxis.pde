@@ -68,7 +68,9 @@ class Enemy{//other cells
       } else {
         fill(0,0,0);//otherwise you lose
         text("You Lost!", 150, 150);
-        stop();
+        textSize(23);
+        text("Your score: " + bob.r, 160, 175);
+        exit();
       }
     }
   }
@@ -89,7 +91,7 @@ class Cell{//your cell
     if(r > 600){//win condition is if ur cell's radius is greater than 600 then the game stops and u win
       fill(0,0,0);
       text("You Win!", 150,150);
-      stop();
+      exit();
     }
   }
 }
