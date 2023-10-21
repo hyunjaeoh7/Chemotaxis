@@ -33,10 +33,10 @@ class Enemy{//other cells
   int x, y, r, rgb; //x y coordinates, radius, and color
   Enemy(){
     //spawns with random x coordinate on either top or bottom of the screen
-    x = (int)(Math.random()*600)-50;
+    x = (int)(Math.random()*1100)-47;
     r = (int)(Math.random()*bob.r) + bob.r/2; //random radius based on your own 
                                                //cell's radius
-    y = (int)(Math.random()*2)*500;
+    y = (int)(Math.random()*2)*1000;
     if(y > 1){         //spawns the enemy cell out of the visual screen 
       y += (r/2 + 47); //so you don't just instantly die by a bigger cell spawning on you
     } else {
@@ -47,15 +47,15 @@ class Enemy{//other cells
   }
   void move(){//moves closer to bob in a random pattern
     if(x > bob.x){
-      x -= (int)(Math.random()*2);
+      x -= (int)(Math.random()*3);
     } else {
-      x += (int)(Math.random()*2);
+      x += (int)(Math.random()*3);
     }
     
     if(y > bob.y){
-      y -= (int)(Math.random()*2);
+      y -= (int)(Math.random()*3);
     } else {
-      y += (int)(Math.random()*2);
+      y += (int)(Math.random()*3);
     }
     
     //draws the enemy cell
@@ -64,12 +64,12 @@ class Enemy{//other cells
     
     if(dist(x, y, mouseX, mouseY) < (bob.r+r)/2){//checks if the enemy cell is touching your cell
       if(bob.r >= r){//if your cell is bigger
-        bob.r += (r/20) + 1;//then increase ur cell size by a bit
+        bob.r += (r/25) + 1;//then increase ur cell size by a bit
       } else {
         fill(0,0,0);//otherwise you lose
-        text("You Lost!", 150, 150);
+        text("You Lost!", 300, 300);
         textSize(23);
-        text("Your score: " + (int)bob.r, 160, 175);
+        text("Your score: " + (int)bob.r, 310, 330);
         exit();
       }
     }
@@ -88,9 +88,11 @@ class Cell{//your cell
     y = okY;
     fill(rgb);
     ellipse(x, y, r, r);//draws your cell
-    if(r > 600){//win condition is if ur cell's radius is greater than 600 then the game stops and u win
+    if(r > 800){//win condition is if ur cell's radius is greater than 800 then the game stops and u win
       fill(0,0,0);
-      text("You Win!", 150,150);
+      text("You Win!", 300,300);
+      textSize(23);
+      text("Your score: " + (int)bob.r, 310, 330);
       exit();
     }
   }
